@@ -3,3 +3,91 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+body {
+    font-size: 16px;
+    font-family: 'Poppins', sans-serif;
+    color: #0f1224;
+}
+
+main {
+    width: 100vw;
+    height: 100vh;
+    background-image: linear-gradient(#2e41f0, #d0c9fa);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+h1 {
+    font-size: 3rem;
+    color: white;
+}
+
+.game-container {
+    width: 50%;
+    max-width: 700px;
+    background-color: white;
+    padding: 3rem;
+    border-radius: 20px;
+    margin-top: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.choices-container {
+    margin: 1.5rem 0;
+}
+
+.btn {
+    background: none;
+    border: 2px solid #2e41f0;
+    padding: 0.7rem 1.5rem;
+    font-weight: 700;
+    color: #2e41f0;
+    border-radius: 20px;
+}
+.btn:hover {
+    cursor: pointer;
+}
+
+.results-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.player,.computer {
+    width: 45%;
+    display: flex;
+    justify-content: center;
+}
+
+.stats {
+    width: 100%;
+    border: 2px solid #0f1224;
+    border-radius: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem 2rem;
+    margin-top: 5rem;
+}
+
+.stats-title {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.stats p {
+    width: 30%;
+    text-align: center;
+}
+
+.stats p span {
+    color: #2e41f0;
+}
