@@ -4,7 +4,9 @@ for(let button of buttons) {
     button.addEventListener('click', function(e) {
         let playerChoice = e.target.id;
         let computerChoice = randomChoice();
-        console.log(playerChoice, computerChoice);
+        document.querySelector('.player-choice').innerHTML = playerChoice;
+        document.querySelector('.computer-choice').innerHTML = computerChoice;
+        console.log(gameLogic(playerChoice, computerChoice));
     })
 }
 
@@ -22,3 +24,32 @@ function randomChoice() {
         return 'Paper';
     }
 };
+
+
+function gameLogic(player, computer) {
+    if(player === 'Rock') {
+        if(computer === 'Paper') {
+            return 'You loose';
+        } else if (computer === 'Scissors') {
+            return 'You win';
+        } else {
+            return 'It\'s a draw';
+        }
+    } else if(player === 'Paper') {
+        if(computer === 'Rock') {
+            return 'You win';
+        } else if (computer === 'Scissors') {
+            return 'You loose';
+        } else {
+            return 'It\'s a draw';
+        }
+    } else {
+        if(computer === 'Rock') {
+            return 'You loose';
+        } else if (computer === 'Paper') {
+            return 'You win';
+        } else {
+            return 'It\'s a draw';
+        }
+    }
+}

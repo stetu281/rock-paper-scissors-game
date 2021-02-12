@@ -62,7 +62,9 @@ h1 {
 .player,.computer {
     width: 45%;
     display: flex;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
 }
 
 .stats {
