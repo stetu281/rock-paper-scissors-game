@@ -2,6 +2,11 @@ let buttons = document.querySelectorAll('.btn');
 let wins = document.querySelector('.wins');
 let draws = document.querySelector('.draws');
 let losses = document.querySelector('.losses');
+let storage = localStorage.getItem('stats');
+if(storage) {
+    let getStats = JSON.parse(storage);
+    writeStats(getStats);
+}
 
 
 for(let button of buttons) {
@@ -16,6 +21,12 @@ for(let button of buttons) {
     })
 }
 
+function writeStats(stats) {
+    wins.innerHTML = stats[0];
+    losses.innerHTML = stats[1];
+    draws.innerHTML = stats[2];
+}
+
 
 function updateStats(result) {
     if(result === 'You win') {
@@ -25,6 +36,8 @@ function updateStats(result) {
     } else {
         draws.innerHTML = parseInt(draws.innerHTML) + 1;
     }
+    let stats = JSON.stringify([parseInt(wins.innerHTML), parseInt(losses.innerHTML), parseInt(draws.innerHTML)]);
+    localStorage.setItem('stats', stats);
 };
 
 
