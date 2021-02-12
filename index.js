@@ -1,4 +1,8 @@
 let buttons = document.querySelectorAll('.btn');
+let wins = document.querySelector('.wins');
+let draws = document.querySelector('.draws');
+let losses = document.querySelector('.losses');
+
 
 for(let button of buttons) {
     button.addEventListener('click', function(e) {
@@ -6,12 +10,22 @@ for(let button of buttons) {
         let computerChoice = randomChoice();
         document.querySelector('.player-choice').innerHTML = playerChoice;
         document.querySelector('.computer-choice').innerHTML = computerChoice;
-        console.log(gameLogic(playerChoice, computerChoice));
+        let result = gameLogic(playerChoice, computerChoice);
+        document.querySelector('.result').innerHTML = result;
+        updateStats(result);
     })
 }
 
 
-
+function updateStats(result) {
+    if(result === 'You win') {
+        wins.innerHTML = parseInt(wins.innerHTML) + 1;
+    } else if(result === 'You loose') {
+        losses.innerHTML = parseInt(losses.innerHTML) + 1;
+    } else {
+        draws.innerHTML = parseInt(draws.innerHTML) + 1;
+    }
+};
 
 
 function randomChoice() {
